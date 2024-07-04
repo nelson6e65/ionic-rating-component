@@ -1,16 +1,15 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { IonicRatingComponent } from './ionic-rating.component';
+import { IonicRatingComponent } from "./ionic-rating.component";
 
-describe('IonicRatingComponent', () => {
+describe("IonicRatingComponent", () => {
   let component: IonicRatingComponent;
   let fixture: ComponentFixture<IonicRatingComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ IonicRatingComponent ]
-    })
-    .compileComponents();
+      declarations: [IonicRatingComponent],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -19,7 +18,7 @@ describe('IonicRatingComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });

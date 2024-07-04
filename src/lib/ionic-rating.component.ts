@@ -1,23 +1,51 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { IonicRatingService } from './ionic-rating.service';
+import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
+import { ControlValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
+import { IonicRatingService } from "./ionic-rating.service";
 
 @Component({
-  selector: 'ionic-rating-component',
+  selector: "ionic-rating-component",
   template: `
     <div class="ionic5-star-rating">
-      <ion-button size="large" fill="clear" class="rate-button" [ngStyle]="{'width' : fontSize, 'height' : fontSize}" *ngFor="let index of iconsArray" id="{{index}}" (click)="changeRating($event)">
-        <ion-icon [ngStyle]="{'color': ((halfStar === 'false' && index < this.Math.round(this.parseFloat(rating))) || (halfStar === 'true' && index < this.parseFloat(rating))) ? activeColor : defaultColor, 'font-size' : fontSize }" name="{{(halfStar ==='true' && (rating - index > 0) && (rating - index <= 0.5)) ? halfIcon : (index < this.Math.round(this.parseFloat(rating))) ? activeIcon : defaultIcon}}"></ion-icon>
+      <ion-button
+        size="large"
+        fill="clear"
+        class="rate-button"
+        [ngStyle]="{ width: fontSize, height: fontSize }"
+        *ngFor="let index of iconsArray"
+        id="{{ index }}"
+        (click)="changeRating($event)"
+      >
+        <ion-icon
+          [ngStyle]="{
+            color:
+              (halfStar === 'false' &&
+                index < this.Math.round(this.parseFloat(rating))) ||
+              (halfStar === 'true' && index < this.parseFloat(rating))
+                ? activeColor
+                : defaultColor,
+            'font-size': fontSize,
+          }"
+          name="{{
+            halfStar === 'true' && rating - index > 0 && rating - index <= 0.5
+              ? halfIcon
+              : index < this.Math.round(this.parseFloat(rating))
+                ? activeIcon
+                : defaultIcon
+          }}"
+        ></ion-icon>
       </ion-button>
     </div>
-  `, styles: [`
-    .rate-button {
-            --padding-bottom:0;
-            --padding-end:0;
-            --padding-start:0;
-            --padding-top:0;
-    }
-  `],
+  `,
+  styles: [
+    `
+      .rate-button {
+        --padding-bottom: 0;
+        --padding-end: 0;
+        --padding-start: 0;
+        --padding-top: 0;
+      }
+    `,
+  ],
   providers: [
     {
       provide: NG_VALUE_ACCESSOR,
@@ -35,11 +63,9 @@ export class IonicRatingComponent implements ControlValueAccessor, OnInit {
     }
   }
 
-
   public get rating(): number {
     return this._rating;
   }
-
 
   constructor(private ionicRatingService: IonicRatingService) {
     this.Math = Math;
@@ -55,23 +81,23 @@ export class IonicRatingComponent implements ControlValueAccessor, OnInit {
   @Output()
   ratingChanged: EventEmitter<number> = new EventEmitter<number>();
   @Input()
-  readonly: string = 'false';
+  readonly: string = "false";
   @Input()
-  activeColor: string = '#488aff';
+  activeColor: string = "#488aff";
   @Input()
-  defaultColor: string = '#aaaaaa';
+  defaultColor: string = "#aaaaaa";
   @Input()
-  activeIcon: string = 'star';
+  activeIcon: string = "star";
   @Input()
-  defaultIcon: string = 'star-outline';
+  defaultIcon: string = "star-outline";
   @Input()
-  halfIcon: string = 'star-half';
+  halfIcon: string = "star-half";
   @Input()
-  halfStar: string = 'false';
+  halfStar: string = "false";
   @Input()
   maxRating: number = 5;
   @Input()
-  fontSize: string = '28px';
+  fontSize: string = "28px";
 
   public readonly eventInfo = (() => {
     const id = new Date().getTime();
@@ -105,11 +131,14 @@ export class IonicRatingComponent implements ControlValueAccessor, OnInit {
   }
 
   changeRating(event) {
-    if (this.readonly && this.readonly === 'true') return;
+    if (this.readonly && this.readonly === "true") return;
     // event is different for firefox and chrome
-    let id = event.target.id ? parseInt(event.target.id) : parseInt(event.target.parentElement.id);
-    if (this.halfStar && this.halfStar === 'true') {
-      this.rating = ((this.rating - id > 0) && (this.rating - id <= 0.5)) ? id + 1 : id + .5;
+    let id = event.target.id
+      ? parseInt(event.target.id)
+      : parseInt(event.target.parentElement.id);
+    if (this.halfStar && this.halfStar === "true") {
+      this.rating =
+        this.rating - id > 0 && this.rating - id <= 0.5 ? id + 1 : id + 0.5;
     } else {
       this.rating = id + 1;
     }

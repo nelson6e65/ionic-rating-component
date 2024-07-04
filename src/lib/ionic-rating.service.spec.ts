@@ -1,8 +1,8 @@
-import { TestBed } from '@angular/core/testing';
+import { TestBed } from "@angular/core/testing";
 
-import { IonicRatingService } from './ionic-rating.service';
+import { IonicRatingService } from "./ionic-rating.service";
 
-describe('IonicRatingService', () => {
+describe("IonicRatingService", () => {
   let service: IonicRatingService;
 
   beforeEach(() => {
@@ -10,7 +10,7 @@ describe('IonicRatingService', () => {
     service = TestBed.inject(IonicRatingService);
   });
 
-  it('should be created', () => {
+  it("should be created", () => {
     expect(service).toBeTruthy();
   });
 });

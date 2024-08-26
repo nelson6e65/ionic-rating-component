@@ -1,18 +1,23 @@
 # Ionic Rating Component
 
+[![npm latest version](https://img.shields.io/npm/v/@nelson6e65/ionic-rating-component)](https://www.npmjs.com/package/@nelson6e65/ionic-rating-component)
+![Semantic release](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)
+
 Highly customizable Ionic component to display evaluations or a quick rating operation of something.
 
-# How to use
+## How to use
 
-## Step 1
+> Note: This documentation is based on original package. It may be outdated (🚧).
 
-### Install it
+### Step 1
+
+#### Install it
 
 ```sh
 npm add @nelson6e65/ionic-rating-component
 ```
 
-### You can use it multiple times in one page and get the modified rating value in the parent component as follows
+#### You can use it multiple times in one page and get the modified rating value in the parent component as follows
 
 ```html
 <ionic-rating-component
@@ -29,7 +34,7 @@ npm add @nelson6e65/ionic-rating-component
 </ionic-rating-component>
 ```
 
-### You can also use it inside the `<form>` component (multiple use inside `<form>` is also supported).
+#### You can also use it inside the `<form>` component (multiple use inside `<form>` is also supported).
 
 ```html
 <form [formGroup]="customForm">
@@ -48,7 +53,7 @@ npm add @nelson6e65/ionic-rating-component
 </form>
 ```
 
-## Options (all are optional, default values are set in the component itself)
+### Options (all are optional, default values are set in the component itself)
 
 - activeIcon (string) : can specify the icon name for active rating (icon name should be from the https://ionicframework.com/docs/ionicons/, default is set to 'ios-star');
 - defaultIcon (string): can specify the default icon name (icon name should be from the https://ionicframework.com/docs/ionicons/, default is set to 'ios-star-outline');
@@ -63,9 +68,9 @@ npm add @nelson6e65/ionic-rating-component
 - ratingChanged (function) : used to handle the rating change in the parent component and do your stuff
 - formControlName : only if you are using the ionic-rating-component component inside the `<form>` component
 
-## Step 2
+### Step 2
 
-### You have to import the StarRatingModule in the module.ts of your parent component as follows and include in imports array
+#### You have to import the StarRatingModule in the module.ts of your parent component as follows and include in imports array
 
 ```ts
 import { NgModule } from "@angular/core";
@@ -95,11 +100,11 @@ import { IonicRatingModule } from "ionic-rating-component";
 export class SatisfactionSurveyPage {}
 ```
 
-## Step 3
+### Step 3
 
-## To get the changed rating in the parent component
+### To get the changed rating in the parent component
 
-### Method 1 : (recommended Method )
+#### Method 1 : (recommended Method )
 
 ```ts
 import { Component } from "@angular/core";
@@ -119,7 +124,7 @@ export class SatisfactionSurveyPage {
 }
 ```
 
-### Method 2 : Using @ViewChild and Observables
+#### Method 2 : Using @ViewChild and Observables
 
 ```ts
 import { Component, ViewChild } from "@angular/core";
@@ -150,11 +155,11 @@ export class SatisfactionSurveyPage implements OnInit, OnDestroy {
 }
 ```
 
-## To get the changed rating in the parent component if you want to use ionic-rating-component inside `<form>` component
+### To get the changed rating in the parent component if you want to use ionic-rating-component inside `<form>` component
 
-### Step 1 : You have to import ReactiveFormsModule in the module.ts of parent component as shown below
+#### Step 1 : You have to import ReactiveFormsModule in the module.ts of parent component as shown below
 
-#### sample code in module.ts of parent component
+##### sample code in module.ts of parent component
 
 ```ts
 import { IonicModule } from "@ionic/angular";
@@ -181,7 +186,7 @@ import { ReactiveFormsModule } from "@angular/forms";
 export class SatisfactionSurveyPageModule {}
 ```
 
-### Step 2 : Make the following changes in the component.ts of parent component
+#### Step 2 : Make the following changes in the component.ts of parent component
 
 ```ts
 import { Component } from "@angular/core";
@@ -213,9 +218,9 @@ export class SatisfactionSurveyPage {
 }
 ```
 
-## Multiple usage of the component in same parent page
+### Multiple usage of the component in same parent page
 
-### parent-component.html
+#### parent-component.html
 
 ```html
 <ionic-rating-component
@@ -245,9 +250,9 @@ export class SatisfactionSurveyPage {
 </ionic-rating-component>
 ```
 
-### parent-component.ts
+#### parent-component.ts
 
-#### Method 1
+##### Method 1
 
 ```ts
 import { Component } from "@angular/core";
@@ -274,7 +279,7 @@ export class SatisfactionSurveyPage {
 }
 ```
 
-#### Method 2 : Using @ViewChild and Observables
+##### Method 2 : Using @ViewChild and Observables
 
 ```ts
 import { Component, ViewChild } from "@angular/core";
@@ -313,9 +318,9 @@ export class SatisfactionSurveyPage implements OnInit, OnDestroy {
 }
 ```
 
-## Multiple usage of ionic-rating-component component in the same `<form>` of the parent page
+### Multiple usage of ionic-rating-component component in the same `<form>` of the parent page
 
-### parent-component.html
+#### parent-component.html
 
 ```html
 <form [formGroup]="customForm">
@@ -341,7 +346,7 @@ export class SatisfactionSurveyPage implements OnInit, OnDestroy {
 </form>
 ```
 
-### parent-component.ts
+#### parent-component.ts
 
 ```ts
 import { Component } from "@angular/core";
@@ -379,7 +384,7 @@ export class SatisfactionSurveyPage {
 }
 ```
 
-### Common event for all instances in a page (useful in some specific scenarios)
+#### Common event for all instances in a page (useful in some specific scenarios)
 
 ```ts
 import { Component, ViewChild } from "@angular/core";
@@ -407,7 +412,7 @@ export class SatisfactionSurveyPage implements OnInit, OnDestroy {
 }
 ```
 
-### Custom icons
+#### Custom icons
 
 If you want to use icons that do not appear in ionicons, you can do so in the following way:
 
@@ -440,23 +445,23 @@ ion-icon {
 <ion-icon name="custom-otherstar"></ion-icon>
 ```
 
-## Build
+### Build
 
-Run `ng build ionic-rating` to build the project. The build artifacts will be stored in the `dist/` directory.
+Run `npm run build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-## Publishing
+### Publishing
 
-After building your library with `ng build ionic-rating`, go to the dist folder `cd dist/ionic-rating` and run `npm publish`.
+Automatically handled by [Semantic Release](https://semantic-release.gitbook.io/).
 
-## Running unit tests
+### Running unit tests
 
 Run `ng test ionic-rating` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Further help
+### Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-## Credits
+### Credits
 
 <!-- TODO -->
 
@@ -465,6 +470,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 - [Desarrollo de apps para moviles](https://squareet.com/desarrollo-de-aplicaciones-para-moviles) SquareetLabs
 <!-- - [All Contributors](../../contributors) -->
 
-## License
+### License
 
 The MIT License (MIT). Please see [License File](./LICENSE) for more information.

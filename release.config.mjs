@@ -9,7 +9,7 @@ export default {
     [
       "@semantic-release/npm",
       {
-        pkgRoot: "dist",
+        // pkgRoot: "dist",
       },
     ],
     [

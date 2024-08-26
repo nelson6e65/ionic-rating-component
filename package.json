@@ -41,7 +41,7 @@
   ],
   "scripts": {
     "build": "ng-packagr -p ng-package.json",
-    "prepack": "npm run build",
+    "postversion": "npm run build",
     "publish": "cd dist && npm publish"
   },
   "license": "MIT",

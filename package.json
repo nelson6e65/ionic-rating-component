@@ -1,6 +1,6 @@
 {
   "name": "@nelson6e65/ionic-rating-component",
-  "description": "Highly customizable ionic 6/7 component to display evaluations or a quick rating operation of something.",
+  "description": "Highly customizable Ionic 7 component to display evaluations or a quick rating operation of something.",
   "version": "0.0.0-development",
   "repository": {
     "type": "git",
@@ -8,10 +8,11 @@
   },
   "keywords": [
     "ionic",
+    "rating",
     "rating ionic",
     "rating ionic7",
-    "rating angular15",
-    "rating angular16",
+    "rating angular17",
+    "rating angular18",
     "ionic 7 rating",
     "ionic7-rating",
     "ionic-rating",

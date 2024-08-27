@@ -7,7 +7,7 @@ Highly customizable Ionic component to display evaluations or a quick rating ope
 
 ## How to use
 
-> Note: This documentation is based on original package. It may be outdated (🚧).
+> Note: This documentation is based on original package [squareetlabs/ionic-rating-component](https://github.com/squareetlabs/ionic-rating-component). It may be outdated (🚧).
 
 ### Step 1
 

@@ -9,14 +9,14 @@ export default {
     [
       "@semantic-release/npm",
       {
-        // pkgRoot: "dist",
+        pkgRoot: "dist",
       },
     ],
     [
       "@semantic-release/github",
       {
-        // assignees: "@nelson6e65",
-        // discussionCategoryName: "announcements",
+        assignees: "@nelson6e65",
+        discussionCategoryName: "announcements",
       },
     ],
   ],

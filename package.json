@@ -1,7 +1,7 @@
 {
   "name": "@nelson6e65/ionic-rating-component",
   "description": "Highly customizable ionic 6/7 component to display evaluations or a quick rating operation of something.",
-  "version": "2.3.0",
+  "version": "0.0.0-development",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nelson6e65/ionic-rating-component.git"
@@ -40,9 +40,7 @@
     }
   ],
   "scripts": {
-    "build": "ng-packagr -p ng-package.json",
-    "postversion": "npm run build",
-    "publish": "cd dist && npm publish"
+    "build": "ng-packagr -p ng-package.json"
   },
   "license": "MIT",
   "homepage": "https://github.com/squareetlabs/ionic-rating-component",

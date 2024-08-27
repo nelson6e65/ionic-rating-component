@@ -1,7 +1,7 @@
 # Ionic Rating Component
 
 [![npm latest version](https://img.shields.io/npm/v/@nelson6e65/ionic-rating-component)](https://www.npmjs.com/package/@nelson6e65/ionic-rating-component)
-![Semantic release](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)
+[![semantic-release: angular](https://img.shields.io/badge/semantic--release-angular-e10079?logo=semantic-release)](https://github.com/semantic-release/semantic-release)
 
 Highly customizable Ionic component to display evaluations or a quick rating operation of something.
 

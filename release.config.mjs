@@ -16,7 +16,7 @@ export default {
       "@semantic-release/github",
       {
         assignees: "@nelson6e65",
-        discussionCategoryName: "announcements",
+        addReleases: "bottom",
       },
     ],
   ],

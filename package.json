@@ -65,7 +65,7 @@
     "@angular/core": "^17.0.0 || ^18.0.0",
     "@angular/forms": "^17.0.0 || ^18.0.0",
     "@angular/router": "^17.0.0 || ^18.0.0",
-    "@ionic/angular": "^7.0.0"
+    "@ionic/angular": "^7.0.0 || ^8.0.0"
   },
   "publishConfig": {
     "access": "public"

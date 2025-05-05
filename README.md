@@ -27,7 +27,7 @@ npm add @nelson6e65/ionic-rating-component
   activeColor="#488aff"
   defaultColor="#f4f4f4"
   readonly="false"
-  rating="3"
+  [rating]="3"
   fontSize="32px"
   (ratingChanged)="onRatingChange($event)"
 >
@@ -230,7 +230,7 @@ export class SatisfactionSurveyPage {
   activeColor="#ff0000"
   defaultColor="#aaaaaa"
   readonly="false"
-  rating="2"
+  [rating]="2"
   fontSize="32px"
   (ratingChanged)="onRatingChange($event)"
 >
@@ -243,7 +243,7 @@ export class SatisfactionSurveyPage {
   activeColor="#d1301a"
   defaultColor="#aaaaaa"
   readonly="false"
-  rating="3"
+  [rating]="3"
   fontSize="32px"
   (ratingChanged)="onRatingChange2($event)"
 >

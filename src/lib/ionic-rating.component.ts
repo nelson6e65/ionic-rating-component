@@ -115,7 +115,7 @@ export class IonicRatingComponent implements ControlValueAccessor, OnInit {
   })();
 
   ngOnInit(): void {
-    this.rating = this.rating || 3; //default after input`s initialization
+    this.rating = this.rating ?? 3; //default after input`s initialization
     for (let i = 0; i < this.maxRating; i++) {
       this.iconsArray.push(i);
     }
